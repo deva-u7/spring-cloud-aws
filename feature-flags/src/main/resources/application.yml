@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: feature-flags
+
+launch-darkly:
+  key: ${LAUNCH_DARKLY_SDK_KEY}
