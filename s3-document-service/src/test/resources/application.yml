@@ -1,0 +1,11 @@
+spring:
+  s3:
+    bucket: test-bucket
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: sa
