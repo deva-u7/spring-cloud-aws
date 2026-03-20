@@ -1,0 +1,1 @@
+org.springframework.boot.env.EnvironmentPostProcessor=com.devau7.secretsmanager.config.AwsSecretConfig

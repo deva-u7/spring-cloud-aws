@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: secrets-manager
+  profiles:
+    active: local
+
+aws:
+  region: ${AWS_REGION:eu-west-1}
+  # Set AWS_SECRET_NAME to the name of your Secrets Manager secret.
+  # The secret must be a JSON string — its keys will be injected as Spring properties.
+  # Example: {"spring.datasource.url": "jdbc:...", "spring.datasource.password": "..."}
+  secret: ${AWS_SECRET_NAME:}
