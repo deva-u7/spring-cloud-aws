@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.4</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.devau7</groupId>
+    <artifactId>spring-cloud-aws</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>spring-cloud-aws</name>
+    <description>Multi-module Spring Boot 3 project demonstrating AWS integrations: SNS messaging, SQS messaging, S3 document storage, Secrets Manager, and feature flags with LaunchDarkly</description>
+
+    <modules>
+        <module>sns-messaging</module>
+        <module>sqs-messaging</module>
+        <module>s3-document-service</module>
+        <module>secrets-manager</module>
+        <module>feature-flags</module>
+    </modules>
+
+    <properties>
+        <java.version>21</java.version>
+        <spring-cloud-aws.version>3.3.0</spring-cloud-aws.version>
+        <aws-sdk.version>2.27.21</aws-sdk.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <launchdarkly.version>7.4.0</launchdarkly.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.awspring.cloud</groupId>
+                <artifactId>spring-cloud-aws-dependencies</artifactId>
+                <version>${spring-cloud-aws.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>bom</artifactId>
+                <version>${aws-sdk.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
