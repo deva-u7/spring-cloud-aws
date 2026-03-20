@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: sqs-messaging
+
+cloud:
+  aws:
+    credentials:
+      access-key: ${AWS_ACCESS_KEY}
+      secret-key: ${AWS_SECRET_KEY}
+    region:
+      static: ${AWS_REGION:us-east-1}
+    stack:
+      auto: false
+
+sqs:
+  queue-name: ${SQS_QUEUE_NAME:DemoQueue}
+
+server:
+  port: 8082
